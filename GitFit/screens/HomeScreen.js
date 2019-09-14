@@ -9,6 +9,11 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { Button } from 'react-native-material-ui'
+import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
+
+
+
 
 import { MonoText } from '../components/StyledText';
 
@@ -31,6 +36,33 @@ export default function HomeScreen() {
 
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
+          <Text style={styles.getStartedText}>YOOOOO</Text>
+          <Button primary text="Primary" />
+          <Card>
+            <CardImage 
+              source={{uri: 'https://cdn.images.express.co.uk/img/dynamic/151/590x/Black-hole-picture-please-time-date-first-image-black-hole-event-horizon-telescope-1112295.jpg?r=1554889792953'}} 
+              title="Above all i am here"
+            />
+            <CardTitle 
+              title="Overhead Press" 
+              subtitle="Perfect exercise for your shoulders"
+            />
+            <CardContent text="Your device will reboot in few seconds once successful, be patient meanwhile" />
+            <CardAction 
+              separator={true} 
+              inColumn={false}>
+              <CardButton
+                onPress={() => {}}
+                title="Push"
+                color="blue"
+              />
+              <CardButton
+                onPress={() => {}}
+                title="Later"
+                color="blue"
+              />
+            </CardAction>
+          </Card>
 
           <Text style={styles.getStartedText}>Get started by opening</Text>
 
