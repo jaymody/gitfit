@@ -5,16 +5,12 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Button } from 'react-native-material-ui'
-import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
-
-
-
-
+// import { Button } from 'react-native-material-ui'
+// import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
+import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 import { MonoText } from '../components/StyledText';
 
 export default function HomeScreen() {
@@ -37,11 +33,46 @@ export default function HomeScreen() {
         <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
           <Text style={styles.getStartedText}>YOOOOO</Text>
-          <Button primary text="Primary" />
-          <Card>
+          <Container>
+            <Header />
+            <Content>
+              <Card>
+                <CardItem>
+                  <Left>
+                    <Thumbnail source={{uri: 'https://cdn.images.express.co.uk/img/dynamic/151/590x/Black-hole-picture-please-time-date-first-image-black-hole-event-horizon-telescope-1112295.jpg?r=1554889792953'}} />
+                    <Body>
+                      <Text>NativeBase</Text>
+                      <Text note>GeekyAnts</Text>
+                    </Body>
+                  </Left>
+                </CardItem>
+                <CardItem cardBody>
+                  <Image source={{uri: 'https://cdn.images.express.co.uk/img/dynamic/151/590x/Black-hole-picture-please-time-date-first-image-black-hole-event-horizon-telescope-1112295.jpg?r=1554889792953'}} style={{height: 200, width: null, flex: 1}}/>
+                </CardItem>
+                <CardItem>
+                  <Left>
+                    <Button transparent>
+                      <Icon active name="thumbs-up" />
+                      <Text>12 Likes</Text>
+                    </Button>
+                  </Left>
+                  <Body>
+                    <Button transparent>
+                      <Icon active name="chatbubbles" />
+                      <Text>4 Comments</Text>
+                    </Button>
+                  </Body>
+                  <Right>
+                    <Text>11h ago</Text>
+                  </Right>
+                </CardItem>
+              </Card>
+            </Content>
+          </Container>
+          {/* <Button primary text="Primary" /> */}
+          {/* <Card>
             <CardImage 
               source={{uri: 'https://cdn.images.express.co.uk/img/dynamic/151/590x/Black-hole-picture-please-time-date-first-image-black-hole-event-horizon-telescope-1112295.jpg?r=1554889792953'}} 
-              title="Above all i am here"
             />
             <CardTitle 
               title="Overhead Press" 
@@ -49,7 +80,7 @@ export default function HomeScreen() {
             />
             <CardContent text="Your device will reboot in few seconds once successful, be patient meanwhile" />
             <CardAction 
-              separator={true} 
+              separator={false} 
               inColumn={false}>
               <CardButton
                 onPress={() => {}}
@@ -62,7 +93,7 @@ export default function HomeScreen() {
                 color="blue"
               />
             </CardAction>
-          </Card>
+          </Card> */}
 
           <Text style={styles.getStartedText}>Get started by opening</Text>
 
