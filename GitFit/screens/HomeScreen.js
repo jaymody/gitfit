@@ -24,12 +24,11 @@ export default function HomeScreen() {
           <Image
             source={
               __DEV__
-                ? require('../assets/images/dumbbell.png')
+                ? require('../assets/images/homeScreen.png')
                 : require('../assets/images/robot-prod.png')
             }
             style={styles.welcomeImage}
           />
-          <Text>GitFit</Text>
         </View>
 
         {/* <View style={styles.getStartedContainer}>
