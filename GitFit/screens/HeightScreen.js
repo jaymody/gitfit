@@ -75,11 +75,20 @@ export default class HomeScreen extends Component{
             <Picker
                 selectedValue={this.state.language}
                 style={{height: 50, width: 100}}
+                color = "#dedfdc"
                 onValueChange={(itemValue) =>
                     this.setState({language: itemValue})
                 }>
-                <Picker.Item label="Java" value="java" />
-                <Picker.Item label="JavaScript" value="js" />
+                {/* <Picker.Item label="Java" value="java" />
+                <Picker.Item label="JavaScript" value="js" /> */}
+                {Array.from(Array(220).keys()).map(item => (
+                    <Picker.Item key={item + 1} label={`${item + 1 + " cm"}`} value={item + 1} />
+                ))}
+                {/* {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(item => (
+                    <Picker.Item
+                    key={item + 1} label={`${item + 1}`} value={item + 1}
+                     />
+                ))} */}
             </Picker>
               <View style={[{ width: "93%", margin: 15, backgroundColor: "red" }]}>
                 {/* <Button
