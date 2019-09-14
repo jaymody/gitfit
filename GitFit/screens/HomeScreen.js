@@ -12,6 +12,7 @@ import {
 // import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
 import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
 import { MonoText } from '../components/StyledText';
+import * as Font from 'expo-font';
 
 export default function HomeScreen() {
   return (
@@ -30,70 +31,8 @@ export default function HomeScreen() {
           />
         </View>
 
-        <View style={styles.getStartedContainer}>
+        {/* <View style={styles.getStartedContainer}>
           <DevelopmentModeNotice />
-          <Text style={styles.getStartedText}>YOOOOO</Text>
-          <Container>
-            <Header />
-            <Content>
-              <Card>
-                <CardItem>
-                  <Left>
-                    <Thumbnail source={{uri: 'https://cdn.images.express.co.uk/img/dynamic/151/590x/Black-hole-picture-please-time-date-first-image-black-hole-event-horizon-telescope-1112295.jpg?r=1554889792953'}} />
-                    <Body>
-                      <Text>NativeBase</Text>
-                      <Text note>GeekyAnts</Text>
-                    </Body>
-                  </Left>
-                </CardItem>
-                <CardItem cardBody>
-                  <Image source={{uri: 'https://cdn.images.express.co.uk/img/dynamic/151/590x/Black-hole-picture-please-time-date-first-image-black-hole-event-horizon-telescope-1112295.jpg?r=1554889792953'}} style={{height: 200, width: null, flex: 1}}/>
-                </CardItem>
-                <CardItem>
-                  <Left>
-                    <Button transparent>
-                      <Icon active name="thumbs-up" />
-                      <Text>12 Likes</Text>
-                    </Button>
-                  </Left>
-                  <Body>
-                    <Button transparent>
-                      <Icon active name="chatbubbles" />
-                      <Text>4 Comments</Text>
-                    </Button>
-                  </Body>
-                  <Right>
-                    <Text>11h ago</Text>
-                  </Right>
-                </CardItem>
-              </Card>
-            </Content>
-          </Container>
-          {/* <Button primary text="Primary" /> */}
-          {/* <Card>
-            <CardImage 
-              source={{uri: 'https://cdn.images.express.co.uk/img/dynamic/151/590x/Black-hole-picture-please-time-date-first-image-black-hole-event-horizon-telescope-1112295.jpg?r=1554889792953'}} 
-            />
-            <CardTitle 
-              title="Overhead Press" 
-              subtitle="Perfect exercise for your shoulders"
-            />
-            <CardContent text="Your device will reboot in few seconds once successful, be patient meanwhile" />
-            <CardAction 
-              separator={false} 
-              inColumn={false}>
-              <CardButton
-                onPress={() => {}}
-                title="Push"
-                color="blue"
-              />
-              <CardButton
-                onPress={() => {}}
-                title="Later"
-                color="blue"
-              />
-            </CardAction>
-          </Card> */}
 
           <Text style={styles.getStartedText}>Get started by opening</Text>
 
@@ -105,15 +44,15 @@ export default function HomeScreen() {
           <Text style={styles.getStartedText}>
             Change this text and your app will automatically reload.
           </Text>
-        </View>
+        </View> */}
 
-        <View style={styles.helpContainer}>
+        {/* <View style={styles.helpContainer}>
           <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
             <Text style={styles.helpLinkText}>
               Help, it didn’t automatically reload!
             </Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </ScrollView>
 
       <View style={styles.tabBarInfoContainer}>
@@ -146,8 +85,7 @@ function DevelopmentModeNotice() {
 
     return (
       <Text style={styles.developmentModeText}>
-        Development mode is enabled: your app will be slower but you can use
-        useful development tools. {learnMoreButton}
+        GitFit
       </Text>
     );
   } else {
