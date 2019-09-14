@@ -24,11 +24,12 @@ export default function HomeScreen() {
           <Image
             source={
               __DEV__
-                ? require('../assets/images/robot-dev.png')
+                ? require('../assets/images/dumbbell.png')
                 : require('../assets/images/robot-prod.png')
             }
             style={styles.welcomeImage}
           />
+          <Text>GitFit</Text>
         </View>
 
         {/* <View style={styles.getStartedContainer}>
@@ -55,7 +56,7 @@ export default function HomeScreen() {
         </View> */}
       </ScrollView>
 
-      <View style={styles.tabBarInfoContainer}>
+      {/* <View style={styles.tabBarInfoContainer}>
         <Text style={styles.tabBarInfoText}>
           This is a tab bar. You can edit it in:
         </Text>
@@ -66,7 +67,7 @@ export default function HomeScreen() {
             navigation/MainTabNavigator.js
           </MonoText>
         </View>
-      </View>
+      </View> */}
     </View>
   );
 }
