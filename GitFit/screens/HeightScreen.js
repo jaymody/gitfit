@@ -71,18 +71,19 @@ export default class HomeScreen extends Component{
             </Text>
           </View>
 
-          <View style={styles.inputContainer}>
+          <View style={styles.scrollContainer}>
             <Picker
                 selectedValue={this.state.language}
                 style={{height: 50, width: 100}}
                 color = "#dedfdc"
+                itemStyle={{color: "#dedfdc", fontSize:17, textAlign:"center" }}
                 onValueChange={(itemValue) =>
                     this.setState({language: itemValue})
                 }>
                 {/* <Picker.Item label="Java" value="java" />
                 <Picker.Item label="JavaScript" value="js" /> */}
                 {Array.from(Array(220).keys()).map(item => (
-                    <Picker.Item key={item + 1} label={`${item + 1 + " cm"}`} value={item + 1} />
+                    <Picker.Item key={item + 1} label={`${item + 1 + " cm"}`} value={item + 1}/>
                 ))}
                 {/* {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(item => (
                     <Picker.Item
@@ -270,5 +271,13 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: '#dedfdc',
     marginTop: 15
+  },
+  scrollContainer: {
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 20,
+    marginRight:20,
+    marginLeft:20,
+    backgroundColor: '#3d3d5a'
   }
 });

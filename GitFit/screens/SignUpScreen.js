@@ -24,10 +24,10 @@ export default class HomeScreen extends Component{
     }
   }
 
-  buttonClickListener = () =>{
-    const { TextInputValue }  = this.state ;
-    Alert.alert(TextInputValue);
-  }
+  // buttonClickListener = () =>{
+  //   const { TextInputValue }  = this.state ;
+  //   Alert.alert(TextInputValue);
+  // }
 
   render() {
     return (
@@ -78,11 +78,10 @@ export default class HomeScreen extends Component{
                   onChangeText={TextInputValue => this.setState({TextInputValue})}
                   // value={this.state.text}
               />
-              <View style={[{ width: "93%", margin: 15, backgroundColor: "red" }]}>
+              <View style={[{ width: "93%", margin: 15}]}>
                 <Button
-                onPress={this.buttonClickListener}
+                onPress={() => this.props.navigation.navigate('HeightScreen.js')}
                 title="Next"
-                color = "red"
                 />
               </View>
           </View>
@@ -158,7 +157,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginRight:20,
     marginLeft:20,
-    backgroundColor: '#3d3d5a',
+    backgroundColor: 'white',
   },
   developmentModeText: {
     marginBottom: 20,
