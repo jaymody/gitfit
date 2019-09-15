@@ -91,7 +91,10 @@ export default function ChooseExerciseScreen() {
                             </Button>
                         </Left>
                         <Body>
-                            <Button transparent>
+                            <Button 
+                              transparent
+                              onPress={this._pickImage}
+                            >
                                 <Icon active name="camera" />
                                 <Text>Record a video</Text>
                             </Button>
@@ -124,7 +127,10 @@ export default function ChooseExerciseScreen() {
                             </Button>
                         </Left>
                         <Body>
-                            <Button transparent>
+                            <Button 
+                              transparent
+                              onPress={this._pickImage}
+                            >
                                 <Icon active name="camera" />
                                 <Text>Record a video</Text>
                             </Button>
@@ -157,7 +163,10 @@ export default function ChooseExerciseScreen() {
                             </Button>
                         </Left>
                         <Body>
-                            <Button transparent>
+                            <Button 
+                              transparent
+                              onPress={this._pickImage}
+                            >
                                 <Icon active name="camera" />
                                 <Text>Record a video</Text>
                             </Button>

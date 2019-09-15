@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import SignUpScreen from '../screens/SignUpScreen';
 import HeightScreen from '../screens/HeightScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ChooseExerciseScreen from '../screens/ChooseExerciseScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -14,7 +15,7 @@ const config = Platform.select({
 
 const HomeStack = createStackNavigator(
   {
-    Home: SignUpScreen,
+    Home: ChooseExerciseScreen,
   },
   config
 );
@@ -69,8 +70,8 @@ SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
-  LinksStack,
-  SettingsStack,
+  // LinksStack,
+  // SettingsStack,
 });
 
 tabNavigator.path = '';
