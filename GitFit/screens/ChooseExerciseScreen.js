@@ -9,7 +9,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right, Title, } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Text, Button, Icon, Left, Body, Title, } from 'native-base';
+import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
+
 
 export default function ChooseExerciseScreen() {
   return (
@@ -20,11 +23,7 @@ export default function ChooseExerciseScreen() {
         <View >
           <Container>
             <Header>
-              {/* <Left/> */}
-              {/* <Body> */}
                 <Title>Choose an Exercise</Title>
-              {/* </Body> */}
-              {/* <Right /> */}
             </Header>
             <Content>
                 <Card>
@@ -56,7 +55,10 @@ export default function ChooseExerciseScreen() {
                             </Button>
                         </Left>
                         <Body>
-                            <Button transparent>
+                            <Button
+                              transparent
+                              onPress={this._pickImage}
+                            >
                                 <Icon active name="camera"/>
                                 <Text>Record a video</Text>
                             </Button>
@@ -196,6 +198,35 @@ function DevelopmentModeNotice() {
     );
   }
 }
+
+_pickImage = async () => {
+  const permission = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+  if (permission.status !== 'granted') {
+      const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      if (newPermission.status === 'granted') {
+        //its granted.
+      }
+  } else {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+  
+    try {
+      await fetch(ENDPOINT, {
+        method: "post",
+        body: result
+      });
+    } catch (e) {
+      console.error(e);
+    }
+    
+    if (!result.cancelled) {
+      this.setState({ image: result.uri });
+    }
+  }
+};
 
 function handleLearnMorePress() {
   WebBrowser.openBrowserAsync(
