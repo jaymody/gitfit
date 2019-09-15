@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right, Title, } from 'native-base';
 
 export default function ChooseExerciseScreen() {
   return (
@@ -19,7 +19,13 @@ export default function ChooseExerciseScreen() {
         contentContainerStyle={styles.contentContainer}>
         <View >
           <Container>
-            <Header />
+            <Header>
+              {/* <Left/> */}
+              {/* <Body> */}
+                <Title>Choose an Exercise</Title>
+              {/* </Body> */}
+              {/* <Right /> */}
+            </Header>
             <Content>
                 <Card>
                     <CardItem>
